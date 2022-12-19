@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup , find_packages
 from typing import List
 
 #Description variables for setup function
-PROjECT_NAME="housing_prediction"
-VERSION="0.0.1"
+PROJECT_NAME="housing_prediction"
+VERSION="0.0.2"
 AUTHOR="Prathamesh Kokitkar"
 DESCRIPTION="This is my first ML project"
 PACKAGES=["housing"]
@@ -16,10 +16,10 @@ def get_requirements_list()->List[str]:
     with open(REQUIREMENTS_FILE_NAME) as requirements_file:
         return requirements_file.readlines()
 setup(
-name=PROjECT_NAME,
+name=PROJECT_NAME,
 version=VERSION,
 author=AUTHOR,
 description=DESCRIPTION,
-packages=PACKAGES,
+packages=find_packages(),
 install_requires=get_requirements_list()
 )
